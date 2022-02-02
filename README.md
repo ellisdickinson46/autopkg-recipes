@@ -1,2 +1,2 @@
-# autopkg-recipes
-Personal overrides for AutoPkg (Munki)
+# AutoPkg Recipes
+My personal overrides for Munki
