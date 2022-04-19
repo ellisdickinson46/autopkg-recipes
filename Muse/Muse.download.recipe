@@ -23,7 +23,7 @@
 				<key>url</key>
 				<string>https://musecdn.sfo3.digitaloceanspaces.com/muse-app/version-latest.txt</string>
 				<key>re_pattern</key>
-				<string>*</string>
+				<string>.*</string>
 				<key>result_output_var_name</key>
 				<string>version</string>
 			</dict>
