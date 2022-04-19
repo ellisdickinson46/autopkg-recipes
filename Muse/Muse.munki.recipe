@@ -28,8 +28,10 @@
 			<array>
 				<string>testing</string>
 			</array>
+			<key>category</key>
+			<string>Music Production</string>
 			<key>description</key>
-			<string> </string>
+			<string>Collaborate with anyone, anywhere, in real-time.</string>
 			<key>developer</key>
 			<string>Muse App LLC</string>
 			<key>display_name</key>
@@ -38,6 +40,33 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>preuninstall_alert</key> 
+			<dict>
+				<key>alert_title</key>
+				<string>Attention</string>
+				<key>alert_detail</key>
+				<string>It is recommended to close any DAW applications during the removal process. If you created the "Muse Multi-Output" Device, you will need to remove this in Audio MIDI Setup.
+				
+				CoreAudio will be restarted during the removal of this application. If you have audio problems, after this removal is complete, please restart your computer.</string>
+				<key>ok_label</key>
+				<string>OK</string>
+				<key>cancel_label</key>
+				<string>Cancel</string>
+			</dict>
+			<key>postuninstall_script</key>
+			<string>#!/bin/sh
+			rm -rf /Library/Muse
+			rm -rf /Applications/Muse.app
+			rm -rf /Library/Audio/Plug-Ins/HAL/MuseAudioShare.driver
+			rm -rf /Library/Audio/Plug-Ins/HAL/MuseRecording.driver
+			rm -rf /Library/Audio/Plug-Ins/HAL/MuseDAWBridge.driver
+			rm -rf /Library/Audio/Plug-Ins/HAL/muse_audio_drivers_ver
+			rm -rf /Library/Audio/Plug-Ins/Components/MusePlugin.component
+			rm -rf /Library/Audio/Plug-Ins/VST3/MusePlugin.vst3
+			rm -rf ~/'Library/Application Support/muse-app'
+			launchctl kickstart -kp system/com.apple.audio.coreaudiod
+			exit $?
+			</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
