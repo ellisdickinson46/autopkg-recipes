@@ -22,6 +22,8 @@
 			<array>
 				<string>testing</string>
 			</array>
+			<key>category</key>
+			<string>Social</string>
 			<key>description</key>
 			<string>The Zoom app provides cloud-hosted video conferencing, plus online meetings and group messaging.</string>
 			<key>developer</key>
@@ -34,8 +36,9 @@
 			<string>%NAME%</string>
 			<key>postuninstall_script</key>
 			<string>#!/bin/sh
-rm -rf /Applications/zoom.us.app
-</string>
+			rm -rf /Applications/zoom.us.app
+			rm -rf /Library/Audio/Plug-Ins/HAL/ZoomAudioDevice.driver
+			</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
