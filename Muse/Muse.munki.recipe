@@ -53,6 +53,11 @@
 				<key>cancel_label</key>
 				<string>Cancel</string>
 			</dict>
+			<key>postinstall_script</key>
+			<string>#!/bin/sh
+			launchctl kickstart -kp system/com.apple.audio.coreaudiod
+			exit $?
+			</string>
 			<key>postuninstall_script</key>
 			<string>#!/bin/sh
 			rm -rf /Library/Muse
