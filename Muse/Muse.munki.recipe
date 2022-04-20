@@ -38,6 +38,20 @@
 			<string>%NAME%</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>postuninstall_script</key>
+			<string>#!/bin/sh
+			rm -rf /Library/Muse
+			rm -rf /Applications/Muse.app
+			rm -rf /Library/Audio/Plug-Ins/HAL/MuseAudioShare.driver
+			rm -rf /Library/Audio/Plug-Ins/HAL/MuseRecording.driver
+			rm -rf /Library/Audio/Plug-Ins/HAL/MuseDAWBridge.driver
+			rm -rf /Library/Audio/Plug-Ins/HAL/muse_audio_drivers_ver
+			rm -rf /Library/Audio/Plug-Ins/Components/MusePlugin.component
+			rm -rf /Library/Audio/Plug-Ins/VST3/MusePlugin.vst3
+			rm -rf ~/'Library/Application Support/muse-app'
+			launchctl kickstart -kp system/com.apple.audio.coreaudiod
+			exit $?
+			</string>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
