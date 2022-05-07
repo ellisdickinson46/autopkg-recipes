@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of TeamViewerTesting and extracts the app information.</string>
+	<string>Downloads the current release version of TeamViewer and extracts the app information.</string>
 	<key>Identifier</key>
-	<string>io.github.hjuutilainen.pkg.TeamViewer</string>
+	<string>com.github.bytefloater.pkg.TeamViewer</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
