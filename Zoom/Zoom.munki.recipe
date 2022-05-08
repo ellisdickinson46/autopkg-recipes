@@ -36,15 +36,15 @@
 			<string>%NAME%</string>
 			<key>postinstall_script</key>
 			<string>#!/bin/sh
-			launchctl kickstart -kp system/com.apple.audio.coreaudiod
-			exit $?
+launchctl kickstart -kp system/com.apple.audio.coreaudiod
+exit $?
 			</string>
 			<key>postuninstall_script</key>
 			<string>#!/bin/sh
-			rm -rf /Applications/zoom.us.app
-			rm -rf /Library/Audio/Plug-Ins/HAL/ZoomAudioDevice.driver
-			launchctl kickstart -kp system/com.apple.audio.coreaudiod
-			exit $?
+rm -rf /Applications/zoom.us.app
+rm -rf /Library/Audio/Plug-Ins/HAL/ZoomAudioDevice.driver
+launchctl kickstart -kp system/com.apple.audio.coreaudiod
+exit $?
 			</string>
 			<key>unattended_install</key>
 			<true/>
