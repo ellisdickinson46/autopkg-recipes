@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads MunkiAdmin and imports into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.bytefloater.MunkiAdmin.munki</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps</string>
+		<key>NAME</key>
+		<string>MunkiAdmin</string>
+		<key>APP_DESTINATION</key>
+		<string>/Applications</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Admin Tools</string>
+			<key>description</key>
+			<string>MunkiAdmin is a GUI for managing munki repositories. It is written with Objective-C and uses in-memory Core Data store as a backend.</string>
+            <key>display_name</key>
+            <string>MunkiAdmin - GUI tools for Munki</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>category</key>
+			<string>Munki Tools</string>
+			<key>developer</key>
+			<string>Hannes Juutilainen</string>
+		</dict>
+	</dict>
+    <key>ParentRecipe</key>
+    <string>com.github.bytefloater.MunkiAdmin.download</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>additional_makepkginfo_options</key>
+				<array>
+					<string>--destinationpath</string>
+					<string>%APP_DESTINATION%</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
